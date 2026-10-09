@@ -1,0 +1,6 @@
+{
+  "name": "Science & Philosophy | Emre Pelit",
+  "description": "emrepelit7337.blogspot.com arşivindeki yazıların İddia / Karşı İddia / Neyin Kanıt Olmadığı kutularıyla ve From: Eski Yazı -> To: Yeni Yazı formatıyla yeniden yapılandırıldığı epistemolojik bilim ve felsefe platformu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

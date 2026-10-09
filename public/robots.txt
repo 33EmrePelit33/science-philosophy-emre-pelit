@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://science-philosophy-emre-pelit.ai.studio/sitemap.xml
