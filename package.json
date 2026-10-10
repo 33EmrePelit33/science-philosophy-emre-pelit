@@ -1,17 +1,10 @@
 {
-  "name": "science-philosophy-emre-pelit",
-  "private": true,
+  "name": "science-philosophy",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3000 --host",
-    "build": "vite build",
-    "preview": "vite preview --port 3000",
-    "lint": "echo 'No lint errors'",
-    "start": "tsx server.ts"
+    "start": "bun x serve .",
+    "dev": "bun x serve ."
   },
-  "dependencies": {},
-  "devDependencies": {
-    "vite": "^8.3.2"
-  }
+  "dependencies": {}
 }

@@ -23,6 +23,11 @@
   --accent-light: #dbeafe;
   --accent-hover: #1e40af;
 
+  /* Eksik alias'lar (kodda kullanılan ama tanımlanmamış değişkenler) */
+  --color-primary: var(--accent-color);
+  --color-primary-hover: var(--accent-hover);
+  --transition-base: 0.3s ease;
+
   --gold-accent: #b45309; /* Klasik Felsefe Vurgusu */
   --gold-light: #fef3c7;
 
@@ -56,6 +61,10 @@
   --accent-color: #3b82f6;
   --accent-light: rgba(59, 130, 246, 0.15);
   --accent-hover: #60a5fa;
+
+  /* Dark tema için de alias'lar */
+  --color-primary: var(--accent-color);
+  --color-primary-hover: var(--accent-hover);
 
   --gold-accent: #f59e0b;
   --gold-light: rgba(245, 158, 11, 0.15);
@@ -274,7 +283,7 @@ a:hover {
   line-height: 1.6;
 }
 
-/* Canlı Yeni Makale Duyuru Bandı (Her yeni yazı eklendiğinde anında güncellenir) */
+/* Canlı Yeni Makale Duyuru Bandı */
 .latest-announcement-banner {
   display: inline-flex;
   align-items: center;
@@ -902,7 +911,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   Canlı Toast Bildirimleri (Yeni Yazı Eklendiğinde Gösterilir)
+   Canlı Toast Bildirimleri
    ========================================================================== */
 .toast-container {
   position: fixed;
@@ -1066,7 +1075,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   İnteraktif Düşünce Deneyleri Bölümü (Thought Experiments & Polls)
+   İnteraktif Düşünce Deneyleri Bölümü
    ========================================================================== */
 .experiments-section {
   padding: 3.5rem 0;
@@ -1247,7 +1256,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   Sokratik Filozof AI Arenası (Socratic Dialogue Arena)
+   Sokratik Filozof AI Arenası
    ========================================================================== */
 .socratic-section {
   padding: 3.5rem 0;
@@ -1617,7 +1626,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   Sosyal Medya ve Paylaşım Kancaları (Social Share Buttons)
+   Sosyal Medya ve Paylaşım Kancaları
    ========================================================================== */
 .share-bar-container {
   display: flex;
@@ -1683,7 +1692,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   Hızlı Eylem Vitrin Makalesi & İnteraktif Anket (Flagship Section)
+   Hızlı Eylem Vitrin Makalesi & İnteraktif Anket
    ========================================================================== */
 .flagship-section {
   padding: 4rem 0;
@@ -2194,4 +2203,100 @@ a:hover {
     padding: 2rem;
     gap: 2rem;
   }
-}
+}
+
+/* ==========================================================================
+   Epistemoloji Süzgeci Kutusu & Dil Filtreleri
+   ========================================================================== */
+.epistemology-filter-box {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.08) 0%, rgba(212, 175, 55, 0.08) 100%);
+  border: 1.5px solid var(--accent-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+[data-theme="dark"] .epistemology-filter-box {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.filter-box-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.epistemology-filter-box p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.filter-box-links {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-box-links a {
+  color: #38bdf8;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.lang-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0.75rem 0;
+}
+
+.lang-pill {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-pill:hover, .lang-pill.active {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+  font-weight: 700;
+}
+
+.lang-tag {
+  background: rgba(148, 163, 184, 0.15);
+  color: var(--text-secondary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.btn-read-label {
+  color: var(--gold-accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.article-card:hover .btn-read-label {
+  transform: translateX(4px);
+}

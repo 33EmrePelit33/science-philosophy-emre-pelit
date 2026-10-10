@@ -111,5 +111,5 @@ app.get('*', (_req, res) => {
 });
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Port ${PORT} üzerinde hazır.`);
+  console.log(`Sunucu 0.0.0.0:${PORT} üzerinde dinleniyor.`);
 });
