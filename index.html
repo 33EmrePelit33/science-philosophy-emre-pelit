@@ -1314,6 +1314,19 @@
       document.body.style.overflow = 'auto';
     }
 
+    // XSS Güvenliği İçin Metin Kaçış Fonksiyonu (Sokratik AI için)
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            "'": '&#39;',
+            '"': '&quot;'
+        }[tag] || tag)
+      );
+    }
+
     // Başlatıcı Olay Dinleyicileri
     document.addEventListener("DOMContentLoaded", () => {
       syncAllBloggerData();
@@ -1395,15 +1408,17 @@
           const windowDiv = document.getElementById('socratic-dialogue-window');
           if (!input.value.trim()) return;
 
-          const userText = input.value;
+          const rawText = input.value;
+          const safeText = escapeHTML(rawText);
+
           windowDiv.innerHTML += `
             <div class="dialogue-message user">
-              <div class="msg-bubble">${userText}</div>
+              <div class="msg-bubble">${safeText}</div>
             </div>
             <div class="dialogue-message socrates">
               <div class="msg-bubble">
                 <div class="msg-sender">Sokratik Filozof</div>
-                "${userText}" iddianın temel varsayımı nedir? Eğer bu kesin bir yasaysa, zihninin bu kararı verirkenki nedensellik bağımsızlığını nasıl kanıtlarsın?
+                "${safeText}" iddianın temel varsayımı nedir? Eğer bu kesin bir yasaysa, zihninin bu kararı verirkenki nedensellik bağımsızlığını nasıl kanıtlarsın?
               </div>
             </div>
           `;
